@@ -86,7 +86,6 @@ function dijkstra(graph, sourceNode) {
   const inf = 9999;
 
   const distances = new Array(num_nodes).fill(inf);
-  const previous = new Array(num_nodes).fill(null);
 
   const nodes = new PriorityQueue();
 
@@ -110,7 +109,6 @@ function dijkstra(graph, sourceNode) {
 
       if (tmpDist < distances[neighbor]) {
         distances[neighbor] = tmpDist;
-        previous[neighbor] = currentNode;
 
         nodes.insert(neighbor, tmpDist);
       }
