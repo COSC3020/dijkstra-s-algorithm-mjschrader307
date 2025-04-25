@@ -10,6 +10,7 @@ class PriorityQueue {
     this.data[j] = temp;
   }
 
+  // Method for moving an out-of-place element upward in the heap to where it should be
   bubbleUp(index) {
     while (index > 0) {
       let parent = Math.floor((index - 1) / 2);
@@ -23,6 +24,7 @@ class PriorityQueue {
     }
   }
 
+  // Same as bubbleUp(), but moving downward
   sinkDown(index) {
     while (2 * index + 1 < this.size) {
       let left = 2 * index + 1;
@@ -61,6 +63,7 @@ class PriorityQueue {
 
     this.data[0] = this.data[--this.size];
 
+    // This is needed, because the second element of the heap isn't always necessarily the next smallest
     this.sinkDown(0);
 
     return minItem;
@@ -83,7 +86,6 @@ class PriorityQueue {
 
 function dijkstra(graph, sourceNode) {
   const num_nodes = graph.length;
-  const inf = 9999;
 
   const distances = new Array(num_nodes).fill(inf);
 
@@ -93,7 +95,7 @@ function dijkstra(graph, sourceNode) {
 
   // Initialize the priority queue
   for (let i = 0; i < num_nodes; i++) {
-    const dist = i === sourceNode ? 0 : inf;
+    const dist = i === sourceNode ? 0 : Infinity;
     nodes.insert(i, dist);
   }
 
