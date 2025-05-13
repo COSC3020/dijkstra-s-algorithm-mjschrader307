@@ -87,7 +87,7 @@ class PriorityQueue {
 function dijkstra(graph, sourceNode) {
   const num_nodes = graph.length;
 
-  const distances = new Array(num_nodes).fill(inf);
+  const distances = new Array(num_nodes).fill(Infinity);
 
   const nodes = new PriorityQueue();
 

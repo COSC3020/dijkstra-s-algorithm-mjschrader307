@@ -69,7 +69,7 @@ const test = [
     // Disjoint graph (unreachable nodes should be infinity (9999 with my implementation)) starting at 0
     Graph: [[[1, 1]], [], [[3, 1]], []],
     Source: 0,
-    Expected: [0, 1, 9999, 9999],
+    Expected: [0, 1, Infinity, Infinity],
   },
 ];
 
